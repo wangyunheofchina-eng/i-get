@@ -1,0 +1,36 @@
+.card {
+  background: var(--bg-soft);
+  border-radius: var(--radius-l);
+  padding: 20px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-s);
+  transition: var(--duration) var(--ease);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-m);
+  transform: translateY(-2px);
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: var(--radius-m);
+  background: var(--brand);
+  color: white;
+  box-shadow: var(--shadow-s);
+  transition: var(--duration) var(--ease);
+}
+
+.btn:hover {
+  background: var(--brand-hover);
+}
+
+.subtitle {
+  font-size: var(--fs-m);
+  color: var(--text-light);
+}
+
+.title {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+}

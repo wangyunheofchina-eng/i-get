@@ -1,0 +1,15 @@
+:root {
+  --cal-bg: rgba(255, 255, 255, 0.55);
+  --cal-border: rgba(0, 0, 0, 0.08);
+  --cal-shadow: 0 4px 16px rgba(0,0,0,0.05);
+
+  --cal-selected-bg: rgba(0, 122, 255, 0.15);
+  --cal-selected-border: rgba(0, 122, 255, 0.45);
+
+  --cal-today-ring: rgba(0, 122, 255, 0.7);
+
+  --cal-lunar: #7d7d7f;
+  --cal-lunar-highlight: #d0021b;
+
+  --cal-hover-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}

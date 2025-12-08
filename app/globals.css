@@ -1,42 +1,123 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@import "../styles/fonts.css";
+@import "../styles/design-tokens.css";
 
-html,
+/* -------- Global Body -------- */
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  background: #f7f7f9;
+  color: #1d1d1f;
+  font-family: var(--font-sans);
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* -------- Apple UI Card -------- */
+.ui-card {
+  @apply bg-white border border-black/5 rounded-2xl shadow-sm;
+  transition: all 0.25s ease;
+}
+.ui-card:hover {
+  @apply shadow-md -translate-y-0.5;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* -------- Buttons -------- */
+.btn-primary {
+  @apply px-4 py-2 rounded-full bg-black text-white text-sm font-medium;
+}
+.btn-secondary {
+  @apply px-4 py-2 rounded-full border border-gray-300 bg-white text-sm;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* -------- Sidebar (基础样式，不磨砂) -------- */
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  border-right: 1px solid rgba(0,0,0,0.05);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* -------- Fade-in animation -------- */
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+  opacity: 0;
 }
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* -------- Apple Hover Card Token -------- */
+.hover-apple {
+  transition: all 0.2s ease;
+}
+.hover-apple:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ================================
+   Calendar Animations & Tokens
+================================ */
+.cal-cell {
+  transition: all 0.25s cubic-bezier(.25, .8, .25, 1);
+}
+.cal-cell:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.cal-selected {
+  transform: scale(1.04);
+  box-shadow: 0 8px 26px rgba(0,122,255,0.15);
+  border-color: rgba(0,122,255,0.5) !important;
+}
+.cal-today {
+  box-shadow: 0 0 0 2px rgba(0,122,255,0.6);
+}
+@keyframes calFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.cal-fade {
+  animation: calFadeIn 0.28s ease-out;
+}
+
+/* -------- macOS Clean Background -------- */
+.bg-macos {
+  background: #f5f5f7;
+}
+
+/* -------- macOS Soft Shadow -------- */
+.shadow-macos {
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.04),
+    0 4px 12px rgba(0,0,0,0.06),
+    0 12px 28px rgba(0,0,0,0.04);
+}
+
+/* -------- Card Hover Lift -------- */
+.card-hover {
+  transition: all .2s cubic-bezier(.25,.1,.25,1);
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.06),
+    0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* -------- Apple-style Solid Cards -------- */
+.apple-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.05),
+    0 6px 12px rgba(0,0,0,0.06);
+  transition: all .2s ease;
+}
+.apple-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 4px 8px rgba(0,0,0,0.08),
+    0 10px 20px rgba(0,0,0,0.10);
+}
+

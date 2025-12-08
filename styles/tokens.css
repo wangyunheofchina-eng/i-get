@@ -1,0 +1,8 @@
+:root {
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --text-muted: #6b7280;
+  --card-border: rgba(0,0,0,0.06);
+  --card-bg: #ffffff;
+}

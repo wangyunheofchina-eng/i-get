@@ -1,0 +1,12 @@
+// 放在 CalendarPage 内部的 weekDays 逻辑替换成：
+
+// --- 自动定位周视图 ---
+// 1) 如果选中某个日期 → 显示该日期所在周
+// 2) 否则默认显示“今天所在周”
+const weekDays = useMemo(() => {
+  if (selectedDate) {
+    const [y, m, d] = selectedDate.split("-").map(Number);
+    return getWeekDays(new Date(y, m - 1, d));
+  }
+  return getWeekDays(today);
+}, [selectedDate, year, month]);

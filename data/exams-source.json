@@ -1,0 +1,35 @@
+[
+  {
+    "slug": "teacher-cert",
+    "name": "教师资格证（教资）",
+    "category": "教育类",
+    "description": "教育行业入门必备证书，适合想进入中小学、培训机构或长期从事教育相关工作的同学。",
+    "nextExamDate": "2025-03-15",
+    "registrationTime": "2025-01-05 ~ 2025-01-20",
+    "level": "入门",
+    "recognition": "国内高认可度",
+    "officialLink": "https://example.com/teacher-cert"
+  },
+  {
+    "slug": "cjkuaiji",
+    "name": "初级会计职称",
+    "category": "财会类",
+    "description": "财会领域入门证书，适合准备进入会计、出纳等岗位的同学。",
+    "nextExamDate": "2025-05-10",
+    "registrationTime": "2025-03-01 ~ 2025-03-20",
+    "level": "入门",
+    "recognition": "行业认可度高",
+    "officialLink": "https://example.com/cjkuaiji"
+  },
+  {
+    "slug": "ruankaocj",
+    "name": "软考 · 初级",
+    "category": "IT & 互联网",
+    "description": "国家计算机技术与软件专业技术资格考试入门级，适合准备进入 IT 行业的同学。",
+    "nextExamDate": "2025-11-02",
+    "registrationTime": "2025-08-15 ~ 2025-09-10",
+    "level": "入门",
+    "recognition": "国内高认可度",
+    "officialLink": "https://example.com/ruankaocj"
+  }
+]

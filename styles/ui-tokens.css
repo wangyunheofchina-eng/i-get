@@ -1,0 +1,27 @@
+:root {
+  /* 色彩系统 - Apple 风 */
+  --text-0: #111;
+  --text-1: #444;
+  --text-2: #777;
+
+  --border: rgba(0,0,0,0.08);
+  --bg-soft: #f7f7f8;
+  --bg-card: #ffffff;
+
+  /* 圆角系统 */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  /* 阴影系统 */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.07);
+
+  /* 间距系统（统一尺度） */
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 14px;
+  --space-4: 18px;
+  --space-5: 24px;
+  --space-6: 32px;
+}
