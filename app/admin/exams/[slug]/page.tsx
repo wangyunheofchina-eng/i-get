@@ -1,6 +1,4 @@
-
-type ExamForm = { name: string; category: string; description: string; suitable: string[]; tips: string[]; flow: string[]; };
-
+"use client";
 
 import { useState } from "react";
 import { exams } from "../../../../data/exams";
@@ -8,10 +6,18 @@ import { categories } from "../../../../data/categories";
 import { scoreExam } from "../../../../utils/contentScore";
 
 export default function ExamEditPage({ params }: { params: { slug: string } }) {
-  const exam = exams.find(e => e.slug === params.slug);
-  const [form, setForm] = useState<ExamForm>(exam as ExamForm || { name: "", category: "", description: "", suitable: [], tips: [], flow: [] });
+  const exam = exams.find((e) => e.slug === params.slug);
 
   if (!exam) return <p>考试不存在</p>;
+
+  const [form, setForm] = useState({
+    name: exam.name || "",
+    category: exam.category || "",
+    description: exam.description || "",
+    suitable: exam.suitable || [],
+    tips: exam.tips || [],
+    flow: exam.flow || [],
+  });
 
   const { score } = scoreExam(exam);
 
@@ -20,15 +26,19 @@ export default function ExamEditPage({ params }: { params: { slug: string } }) {
 
       {/* 标题栏 */}
       <div>
-        <h1 className="text-2xl font-semibold">✏️ 编辑考试：{exam.name}</h1>
+        <h1 className="text-2xl font-semibold">✏️ 编辑考试：{form.name}</h1>
 
         <p className="text-sm text-gray-500 mt-1">
           当前内容完整度：
-          <span className={
-            score >= 85 ? "text-green-600" :
-            score >= 60 ? "text-yellow-600" :
-            "text-red-600"
-          }>
+          <span
+            className={
+              score >= 85
+                ? "text-green-600"
+                : score >= 60
+                ? "text-yellow-600"
+                : "text-red-600"
+            }
+          >
             {score}%
           </span>
         </p>
@@ -52,7 +62,7 @@ export default function ExamEditPage({ params }: { params: { slug: string } }) {
           onChange={(e) => setForm({ ...form, category: e.target.value })}
           className="mt-1 p-2 border rounded w-full"
         >
-          {categories.map(cat => (
+          {categories.map((cat) => (
             <option key={cat.slug} value={cat.name}>
               {cat.name}
             </option>
@@ -74,7 +84,7 @@ export default function ExamEditPage({ params }: { params: { slug: string } }) {
       <label className="block">
         <span className="text-sm text-gray-600">适合人群（每行一条）</span>
         <textarea
-          value={(form.suitable || []).join("\n")}
+          value={form.suitable.join("\n")}
           onChange={(e) =>
             setForm({ ...form, suitable: e.target.value.split("\n") })
           }
@@ -86,7 +96,7 @@ export default function ExamEditPage({ params }: { params: { slug: string } }) {
       <label className="block">
         <span className="text-sm text-gray-600">备考建议（每行一条）</span>
         <textarea
-          value={(form.tips || []).join("\n")}
+          value={form.tips.join("\n")}
           onChange={(e) =>
             setForm({ ...form, tips: e.target.value.split("\n") })
           }
@@ -98,7 +108,7 @@ export default function ExamEditPage({ params }: { params: { slug: string } }) {
       <label className="block">
         <span className="text-sm text-gray-600">报考流程（每行一条）</span>
         <textarea
-          value={(form.flow || []).join("\n")}
+          value={form.flow.join("\n")}
           onChange={(e) =>
             setForm({ ...form, flow: e.target.value.split("\n") })
           }
