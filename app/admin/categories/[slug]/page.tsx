@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { categories } from "../../../../data/categories";
 
-export default function CategoryEditPage({ params }) {
+export default function CategoryEditPage({ params }: { params: any }) {
   const category = categories.find(c => c.slug === params.slug);
 
   const [form, setForm] = useState(category);
