@@ -31,7 +31,6 @@ export default function ExamEditPage({ params }: { params: { slug: string } }) {
           </span>
         </p>
 
-        )}
       </div>
 
       {/* 字段：名称 */}
@@ -39,7 +38,6 @@ export default function ExamEditPage({ params }: { params: { slug: string } }) {
         <span className="text-sm text-gray-600">名称</span>
         <input
           value={form.name}
-          onChange={(e) => setForm({ ...form, name: e.target.value })}
           className="mt-1 p-2 border rounded w-full"
         />
       </label>
@@ -49,14 +47,12 @@ export default function ExamEditPage({ params }: { params: { slug: string } }) {
         <span className="text-sm text-gray-600">分类</span>
         <select
           value={form.category}
-          onChange={(e) => setForm({ ...form, category: e.target.value })}
           className="mt-1 p-2 border rounded w-full"
         >
           {categories.map(cat => (
             <option key={cat.slug} value={cat.name}>
               {cat.name}
             </option>
-          ))}
         </select>
       </label>
 
@@ -65,7 +61,6 @@ export default function ExamEditPage({ params }: { params: { slug: string } }) {
         <span className="text-sm text-gray-600">描述</span>
         <textarea
           value={form.description}
-          onChange={(e) => setForm({ ...form, description: e.target.value })}
           className="mt-1 p-2 border rounded w-full h-32"
         />
       </label>
@@ -74,7 +69,6 @@ export default function ExamEditPage({ params }: { params: { slug: string } }) {
       <label className="block">
         <span className="text-sm text-gray-600">适合人群（每行一条）</span>
         <textarea
-          value={(form.suitable || []).join("\n")}
           onChange={(e) =>
             setForm({ ...form, suitable: e.target.value.split("\n") })
           }
@@ -86,7 +80,6 @@ export default function ExamEditPage({ params }: { params: { slug: string } }) {
       <label className="block">
         <span className="text-sm text-gray-600">备考建议（每行一条）</span>
         <textarea
-          value={(form.tips || []).join("\n")}
           onChange={(e) =>
             setForm({ ...form, tips: e.target.value.split("\n") })
           }
@@ -98,7 +91,6 @@ export default function ExamEditPage({ params }: { params: { slug: string } }) {
       <label className="block">
         <span className="text-sm text-gray-600">报考流程（每行一条）</span>
         <textarea
-          value={(form.flow || []).join("\n")}
           onChange={(e) =>
             setForm({ ...form, flow: e.target.value.split("\n") })
           }
