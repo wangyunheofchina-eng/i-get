@@ -10,7 +10,7 @@ export default function QualityDashboardPage() {
     scored.length === 0
       ? 0
       : Math.round(
-          scored.reduce((sum, item) => sum + item.score, 0) / scored.length
+          scored.reduce((sum: number, item: any) => sum + item.score, 0) / scored.length
         );
 
   const needImprove = scored.filter((item) => item.score < 70);
