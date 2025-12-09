@@ -20,7 +20,7 @@ export default function ContentAdminPage() {
 
   const soon = sorted.filter(e => {
     const d = new Date(e.nextExamDate || 0);
-    const diff = (d - today) / (1000 * 60 * 60 * 24);
+    const diff = (d.getTime() - today.getTime()) / (1000 * 60 * 60 * 24);
     return diff >= 0 && diff <= 30;
   });
 
