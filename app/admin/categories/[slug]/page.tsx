@@ -6,7 +6,7 @@ import { categories } from "../../../../data/categories";
 export default function CategoryEditPage({ params }: { params: { slug: string } }) {
   const category = categories.find(c => c.slug === params.slug);
 
-  const [form, setForm] = useState(category);
+  const [form, setForm] = useState(category || { name: "", slug: "" });
 
   if (!category) return <p>分类不存在</p>;
 
