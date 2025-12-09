@@ -9,7 +9,7 @@ export default function ContentAdminPage() {
   const sorted = useMemo(() => {
     return [...exams].sort((a, b) => {
       if (sortKey === "date") {
-        return new Date(a.nextExamDate) - new Date(b.nextExamDate);
+        return new Date(a.nextExamDate).getTime() - new Date(b.nextExamDate).getTime();
       }
       return a.name.localeCompare(b.name);
     });
