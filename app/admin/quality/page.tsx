@@ -13,7 +13,7 @@ export default function QualityDashboardPage() {
           scored.reduce((sum: number, item: any) => sum + item.score, 0) / scored.length
         );
 
-  const needImprove = scored.filter((item) => item.score < 70);
+  const needImprove = scored.filter((item: any) => item.score < 70);
 
   return (
     <div className="space-y-8">
