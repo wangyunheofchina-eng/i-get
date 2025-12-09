@@ -1,6 +1,6 @@
+
 type ExamForm = { name: string; category: string; description: string; suitable: string[]; tips: string[]; flow: string[]; };
 
-"use client";
 
 import { useState } from "react";
 import { exams } from "../../../../data/exams";
