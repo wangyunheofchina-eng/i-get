@@ -1,3 +1,5 @@
+type ExamForm = { name: string; category: string; description: string; suitable: string[]; tips: string[]; flow: string[]; };
+
 "use client";
 
 import { useState } from "react";
@@ -7,7 +9,7 @@ import { scoreExam } from "../../../../utils/contentScore";
 
 export default function ExamEditPage({ params }: { params: { slug: string } }) {
   const exam = exams.find(e => e.slug === params.slug);
-  const [form, setForm] = useState(exam || { name: "", category: "", description: "", suitable: [], tips: [], flow: [] });
+  const [form, setForm] = useState<ExamForm>(exam as ExamForm || { name: "", category: "", description: "", suitable: [], tips: [], flow: [] });
 
   if (!exam) return <p>考试不存在</p>;
 
