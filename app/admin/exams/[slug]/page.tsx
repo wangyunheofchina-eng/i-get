@@ -31,14 +31,6 @@ export default function ExamEditPage({ params }: { params: { slug: string } }) {
           </span>
         </p>
 
-        {/* 缺失提示 */}
-        {missing.length > 0 && (
-          <div className="mt-3 p-3 bg-red-50 border border-red-200 text-red-700 rounded text-sm">
-            <p className="font-medium">以下内容仍未完善：</p>
-            <ul className="list-disc pl-5 mt-1 space-y-1">
-              {missing.map((m, i) => <li key={i}>{m}</li>)}
-            </ul>
-          </div>
         )}
       </div>
 
