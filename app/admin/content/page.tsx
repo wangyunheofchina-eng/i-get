@@ -29,7 +29,7 @@ export default function ContentAdminPage() {
     return d < today;
   });
 
-  function hasMissingFields(exam) {
+  function hasMissingFields(exam: any) {
     const keys = [
       "overview", "eligibility", "suitableFor",
       "subjects", "value", "locations", "tips"
