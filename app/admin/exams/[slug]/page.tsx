@@ -11,7 +11,7 @@ export default function ExamEditPage({ params }: { params: { slug: string } }) {
 
   if (!exam) return <p>考试不存在</p>;
 
-  const { missing, score } = scoreExam(exam);
+  const { score } = scoreExam(exam);
 
   return (
     <div className="space-y-8">
