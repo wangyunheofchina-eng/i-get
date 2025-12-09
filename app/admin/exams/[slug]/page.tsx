@@ -5,7 +5,7 @@ import { exams } from "../../../../data/exams";
 import { categories } from "../../../../data/categories";
 import { scoreExam } from "../../../../utils/contentScore";
 
-export default function ExamEditPage({ params }) {
+export default function ExamEditPage({ params }: { params: { slug: string } }) {
   const exam = exams.find(e => e.slug === params.slug);
   const [form, setForm] = useState(exam);
 
