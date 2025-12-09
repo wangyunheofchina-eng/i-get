@@ -4,7 +4,7 @@ import { scoreAllExams } from "../../../utils/contentScore";
 
 export default function QualityDashboardPage() {
   const scored = scoreAllExams(exams)
-    .sort((a, b) => b.score - a.score);
+    .sort((a: any, b: any) => b.score - a.score);
 
   const avgScore =
     scored.length === 0
@@ -44,7 +44,7 @@ export default function QualityDashboardPage() {
         <div className="space-y-3">
           {scored
             .slice()
-            .sort((a, b) => a.score - b.score)
+            .sort((a: any, b: any) => a.score - b.score)
             .map(({ exam, score, missing }) => (
               <UiCard
                 key={exam.slug}
