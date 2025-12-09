@@ -19,13 +19,13 @@ export default function ContentAdminPage() {
   today.setHours(0, 0, 0, 0);
 
   const soon = sorted.filter(e => {
-    const d = new Date(e.nextExamDate);
+    const d = new Date(e.nextExamDate || 0);
     const diff = (d - today) / (1000 * 60 * 60 * 24);
     return diff >= 0 && diff <= 30;
   });
 
   const expired = sorted.filter(e => {
-    const d = new Date(e.nextExamDate);
+    const d = new Date(e.nextExamDate || 0);
     return d < today;
   });
 
